@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Nights - Surrender to Forbidden Pleasures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2c0a1a 0%, #4a0b2c 50%, #1a0a2c 100%);
+            color: #ffd700;
+            font-family: 'Crimson Text', serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x400/8B0000/FFD700?text=Velvet+Nights') center/cover;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(139,0,0,0.3) 0%, transparent 70%);
+        }
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #ff1493;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            position: relative;
+            z-index: 1;
+        }
+        header p {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #ffd700;
+            position: relative;
+            z-index: 1;
+        }
+        nav {
+            background: rgba(74, 11, 44, 0.9);
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        nav button {
+            background: linear-gradient(45deg, #8b0000, #ff1493);
+            color: #ffd700;
+            border: none;
+            padding: 12px 24px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 25px;
+            font-family: inherit;
+            font-size: 1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        nav button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(255,20,147,0.5);
+        }
+        section {
+            display: none;
+            padding: 40px 20px;
+            min-height: 80vh;
+        }
+        section.active {
+            display: block;
+        }
+        .erotic-section {
+            background: rgba(255,255,255,0.1);
+            color: #ffd700;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,20,147,0.3);
+            box-shadow: inset 0 0 20px rgba(255,20,147,0.1);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        .girl-slot, .airbnb-slot {
+            position: relative;
+            height: 280px;
+            background: linear-gradient(45deg, #4a0b2c, #2c0a1a);
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid rgba(255,20,147,0.5);
+        }
+        .girl-slot:hover, .airbnb-slot:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(255,20,147,0.4);
+        }
+        .girl-slot video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .girl-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            filter: sepia(0.3) hue-rotate(300deg);
+        }
+        .swipe-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff1493;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px #ffd700;
+            transition: opacity 0.3s;
+            z-index: 2;
+        }
+        .swipe-overlay.hidden {
+            opacity: 0;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.4);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        input, button {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 1px solid #ff1493;
+            background: rgba(255,20,147,0.1);
+            color: #ffd700;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        button {
+            background: linear-gradient(45deg, #ff1493, #8b0000);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .checkbox-item {
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .checkbox-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ff1493;
+        }
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        .horizontal-scroll img {
+            width: 350px;
+            height: 220px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .about-text {
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.1em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .drinks-note {
+            background: linear-gradient(45deg, rgba(255,165,0,0.2), rgba(255,69,0,0.2));
+            color: #ffd700;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,165,0,0.5);
+        }
+        /* Lazy load placeholders for better initial render */
+        .lazy-img, .lazy-small {
+            position: relative;
+            background: linear-gradient(45deg, #4a0b2c, #2c0a1a);
+        }
+        .lazy-img::after, .lazy-small::after {
+            content: 'S' attr(data-siren);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff69b4;
+            font-weight: bold;
+            z-index: 1;
+        }
+        .lazy-img::after {
+            font-size: 2em;
+        }
+        .lazy-small::after {
+            font-size: 1.5em;
+        }
+        #metrics {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background: rgba(0,0,0,0.8);
+            color: #ffd700;
+            padding: 10px;
+            font-size: 0.8em;
+            font-family: monospace;
+            border-top-left-radius: 10px;
+            max-width: 300px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Velvet Nights</h1>
+        <p>Where silken shadows caress bare skin, and every whisper ignites a fire of untamed desire. Surrender to the night's most intoxicating embrace.</p>
+    </header>
+    <nav>
+        <button onclick="showSection('ladies-room')">Ladies Room</button>
+        <button onclick="showSection('party-organizer')">Party Organizer</button>
+        <button onclick="showSection('airbnb')">Airbnb</button>
+        <button onclick="showSection('about')">About</button>
+    </nav>
+
+    <section id="ladies-room" class="active">
+        <div class="erotic-section">
+            <h2 style="color: #ff1493; text-align: center;">Ladies Room: Sirens of Sinful Allure</h2>
+            <p style="text-align: center; font-style: italic;">Gaze upon our velvet-veiled vixens, their forms a tapestry of temptation. Swipe to unveil the rhythmic dance of flesh and fantasy.</p>
+            <div class="grid" id="girls-grid">
+                <!-- Girls slots generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="party-organizer">
+        <div class="erotic-section">
+            <h2 style="color: #ff1493; text-align: center;">Party Organizer: Orgy of Ecstatic Revelry</h2>
+            <p style="text-align: center; font-style: italic;">Curate your carnal gathering, where bodies entwine in euphoric abandon. Register your lustful intentions and summon your chosen muses.</p>
+            <div class="drinks-note">
+                <strong>Drinks Delivery:</strong> Our enigmatic host can deliver elixirs of inebriation to your lair of lust. We dare not vend spirits through the ether, for Kenyan edicts forbid it—deliveries alone shall quench your thirst.
+            </div>
+            <form id="registration-form">
+                <input type="text" id="fullName" placeholder="Your Name, Whispered in Ecstasy" required>
+                <input type="email" id="email" placeholder="Email for Secret Liaisons" required>
+                <input type="tel" id="phone" placeholder="Phone for Midnight Cravings (e.g., 0714520249)" required>
+                <input type="date" id="party-date" required>
+                <button type="button" onclick="proceedToSelection()">Seal Your Desire & Summon Sirens</button>
+            </form>
+            <div id="girls-selection" style="display:none;">
+                <h3 style="color: #ff1493;">Your Cravings Confirmed—Select Your Harlots of Hedonism</h3>
+                <div class="checkbox-grid" id="party-girls-grid">
+                    <!-- Party girls checkboxes generated by JS -->
+                </div>
+                <button onclick="sendToWhatsApp()">Dispatch Your Decadent Decree</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="airbnb">
+        <div class="erotic-section">
+            <h2 style="color: #ff1493; text-align: center;">Airbnb: Sanctuaries of Sensual Surrender</h2>
+            <p style="text-align: center; font-style: italic;">Lairs where lovers lose themselves in languid explorations of the forbidden. Tap to traverse tantalizing visions of velvet-draped vice.</p>
+            <div class="grid" id="airbnb-grid">
+                <!-- Airbnb slots generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="erotic-section">
+            <h2 style="color: #ff1493; text-align: center;">About Velvet Nights: Ode to Carnal Canvas</h2>
+            <div class="about-text">
+                <p>In the throbbing heart of midnight's embrace, where moonlit tendrils trace the arch of a lover's spine, Velvet Nights unfurls like a lover's sigh—soft, insistent, devouring. Here, in this realm of raw reverie, bodies become brushstrokes on a canvas of crimson silk, each curve a confession, each gasp a sonnet of surrender.</p>
+                <p>Our dominion is woven from the threads of taboo delight: clandestine couplings that quicken the pulse to fevered frenzy, bacchanalian bashes where sweat-slicked skin slides in symphonic sin, and boudoirs of borrowed bliss, alcoves alive with the echo of ecstatic cries. Exotic enchantresses, their hips a hypnotic sway of shadowed promise, await your summons—their lips a portal to paradises profane, their touch a tango of torment and triumph.</p>
+                <p>We are the architects of appetite, sculpting nights where inhibition dissolves like dew on dawn-kissed flesh. Artistic in our alchemy of arousal, we transmute mere mortals into maestros of the moan. Dare to descend into our depths; let the velvet vise your virtues, and emerge reborn in rapture's relentless glow.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="metrics"></div>
+
+    <script>
+        // Defer non-critical script execution
+        function init() {
+            function showSection(sectionId) {
+                document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+                document.getElementById(sectionId).classList.add('active');
+            }
+
+            // Performance metrics setup
+            const metrics = {
+                initStart: performance.now(),
+                domLoad: 0,
+                fullLoad: 0,
+                girlsGen: 0,
+                partyGen: 0,
+                airbnbGen: 0
+            };
+
+            // Generate 75 girl slots with Intersection Observer lazy loading
+            // To add your local images: Create a folder named 'images' in the same directory as this HTML file.
+            // Place your girl images there, named as siren1.jpg, siren2.jpg, ..., siren75.jpg (or .png if preferred).
+            // Adjust the file extension in the code below if your images use .png instead of .jpg.
+            // To add your local videos: Create a folder named 'videos' in the same directory as this HTML file.
+            // Place your girl videos there, named as siren1.mp4, siren2.mp4, ..., siren75.mp4.
+            // Adjust the file extension in the code below if your videos use a different format.
+            // Videos are now lazy-loaded: only downloaded when first clicked.
+            // Images use Intersection Observer for lazy loading.
+            const girlsStart = performance.now();
+            const girlsGrid = document.getElementById('girls-grid');
+            for (let i = 1; i <= 75; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'girl-slot';
+                slot.dataset.sirenId = i;
+                const emptyPlaceholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjI4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNGEwYjJjIi8+PC9zdmc+';
+                slot.innerHTML = `
+                    <img class="lazy-img" data-siren="${i}" data-src="images/siren${i}.PNG" alt="Siren of Desire ${i}" src="${emptyPlaceholder}">
+                    <video loop muted playsinline preload="none" style="display: none;"></video>
+                    <div class="swipe-overlay">spank!</div>
+                `;
+                slot.addEventListener('click', function() {
+                    const video = this.querySelector('video');
+                    const overlay = this.querySelector('.swipe-overlay');
+                    const sirenId = this.dataset.sirenId;
+
+                    // Lazy load video source if not already loaded
+                    if (video.children.length === 0) {
+                        const source = document.createElement('source');
+                        source.src = `videos/siren${sirenId}.mp4`;
+                        source.type = 'video/mp4';
+                        video.appendChild(source);
+                        video.load();
+                    }
+
+                    if (video.style.display === 'none' || video.paused) {
+                        video.style.display = 'block';
+                        overlay.style.zIndex = '1'; // Ensure overlay is below video when hidden
+                        video.play().catch(e => {
+                            console.log('Video play failed:', e);
+                            // If play fails (e.g., no video file), hide video and show overlay
+                            video.style.display = 'none';
+                            overlay.classList.remove('hidden');
+                        });
+                        overlay.classList.add('hidden');
+                    } else {
+                        video.pause();
+                        video.currentTime = 0;
+                        video.style.display = 'none';
+                        overlay.classList.remove('hidden');
+                    }
+                });
+                girlsGrid.appendChild(slot);
+            }
+            metrics.girlsGen = performance.now() - girlsStart;
+
+            // Generate party girls checkboxes with Intersection Observer lazy loading
+            // Uses the same local images folder: siren1.jpg to siren20.jpg
+            const partyStart = performance.now();
+            const partyGirlsGrid = document.getElementById('party-girls-grid');
+            for (let i = 1; i <= 20; i++) {
+                const item = document.createElement('div');
+                item.className = 'checkbox-item';
+                const emptyPlaceholderSmall = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzRhMGIyYyIvPjwvc3ZnPg==';
+                item.innerHTML = `
+                    <input type="checkbox" id="siren${i}" value="Siren ${i}">
+                    <label for="siren${i}">
+                        <img class="lazy-small" data-siren="${i}" data-src="images/siren${i}.jpg" alt="Siren ${i}" src="${emptyPlaceholderSmall}">
+                        <div>${i}</div>
+                    </label>
+                `;
+                partyGirlsGrid.appendChild(item);
+            }
+            metrics.partyGen = performance.now() - partyStart;
+
+            // Set up Intersection Observer for lazy loading images with optimized thresholds
+            function createPlaceholder(width, height, text) {
+                const svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#4a0b2c"/><text x="50%" y="50%" font-family="Arial" font-size="${Math.min(width, height) / 10}" fill="#ff69b4" text-anchor="middle" dy=".3em">${text}</text></svg>`;
+                return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
+            }
+
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const isLarge = img.classList.contains('lazy-img');
+                        const width = isLarge ? 220 : 80;
+                        const height = isLarge ? 280 : 80;
+                        const sirenNum = img.dataset.siren;
+                        const placeholderUrl = createPlaceholder(width, height, `S${sirenNum}`);
+                        const realSrc = img.dataset.src;
+
+                        img.src = realSrc;
+                        img.onerror = () => {
+                            img.src = placeholderUrl;
+                        };
+                        img.onload = () => {
+                            delete img.dataset.src;
+                            img.classList.remove('lazy-img', 'lazy-small');
+                            img.onerror = null;
+                        };
+
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, { 
+                rootMargin: '100px 0px', // Preload 100px before entering viewport horizontally centered
+                threshold: [0.01, 0.5, 1.0] // Trigger at 1% visible (early load), 50% (mid), and fully visible (ensure load)
+            });
+
+            // Observe all lazy images
+            document.querySelectorAll('.girl-slot img, .checkbox-item img').forEach(img => {
+                imageObserver.observe(img);
+            });
+
+            function proceedToSelection() {
+                const form = document.getElementById('registration-form');
+                if (!form.checkValidity()) {
+                    alert('Complete your carnal credentials, darling.');
+                    return;
+                }
+                document.getElementById('girls-selection').style.display = 'block';
+            }
+
+            function sendToWhatsApp() {
+                const selectedSirens = [];
+                document.querySelectorAll('#party-girls-grid input:checked').forEach(cb => {
+                    selectedSirens.push(cb.value);
+                });
+                if (selectedSirens.length === 0) {
+                    alert('Choose your temptresses, or the night remains unclaimed.');
+                    return;
+                }
+                const fullName = document.getElementById('fullName').value;
+                const phone = document.getElementById('phone').value;
+                const partyDate = document.getElementById('party-date').value;
+                const message = `Lustful Liturgy: ${fullName}, Whisper-Line: ${phone}, Ritual Night: ${partyDate}. Summoned Sirens: ${selectedSirens.join(', ')}. Let the debauchery dawn.`;
+                const whatsappUrl = `https://wa.me/+254714520249?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            }
+
+            // Generate 50 Airbnb slots
+            const airbnbStart = performance.now();
+            const airbnbGrid = document.getElementById('airbnb-grid');
+            for (let i = 1; i <= 50; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'airbnb-slot';
+                slot.innerHTML = `<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjI4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjOGIwMDAwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmNjliNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxhaXIgJHtpfTwvdGV4dD48L3N2Zz4=" alt="Den of Delight ${i}">`;
+                slot.onclick = function() {
+                    const detailPage = window.open('', '_blank');
+                    detailPage.document.write(`
+                        <!DOCTYPE html>
+                        <html>
+                        <head><title>Den of Delight ${i}</title><style>body{background:linear-gradient(135deg,#2c0a1a,#4a0b2c);color:#ffd700;font-family:'Crimson Text',serif;padding:20px;}</style></head>
+                        <body>
+                            <h1 style="color:#ff1493;">Den of Delight ${i}: Where Passions Pulse Unchained</h1>
+                            <div class="horizontal-scroll" style="display:flex;overflow-x:auto;gap:15px;padding:20px;background:rgba(0,0,0,0.3);border-radius:10px;">
+                                ${Array.from({length: 5}, (_, j) => `<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNGEwYjJjIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmMTQ5MyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlNpbmZ1bCBWaWV3ICR7aisxfTwvdGV4dD48L3N2Zz4=" alt="View ${j+1}" style="flex-shrink:0;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.5);">`).join('')}
+                            </div>
+                            <p style="font-style:italic;">Claim this carnal cathedral for your rites of rapture.</p>
+                            <a href="https://wa.me/254714520249?text=Craving Den ${i} for forbidden frolics" target="_blank" style="display:inline-block;padding:15px;background:linear-gradient(45deg,#ff1493,#8b0000);color:#ffd700;text-decoration:none;border-radius:10px;">Invoke the Keeper of Keys</a>
+                        </body>
+                        </html>
+                    `);
+                };
+                airbnbGrid.appendChild(slot);
+            }
+            metrics.airbnbGen = performance.now() - airbnbStart;
+            metrics.initEnd = performance.now();
+
+            // Update metrics display
+            const metricsDiv = document.getElementById('metrics');
+            metricsDiv.innerHTML = `
+                Init: ${Math.round(metrics.initEnd - metrics.initStart)}ms<br>
+                Girls Gen: ${Math.round(metrics.girlsGen)}ms<br>
+                Party Gen: ${Math.round(metrics.partyGen)}ms<br>
+                Airbnb Gen: ${Math.round(metrics.airbnbGen)}ms
+            `;
+
+            // Load event metrics
+            window.addEventListener('load', () => {
+                if (performance.getEntriesByType('navigation').length > 0) {
+                    const perf = performance.getEntriesByType('navigation')[0];
+                    metrics.domLoad = perf.domContentLoadedEventEnd - perf.fetchStart;
+                    metrics.fullLoad = perf.loadEventEnd - perf.fetchStart;
+                    metricsDiv.innerHTML += `<br>DOM Load: ${Math.round(metrics.domLoad)}ms<br>Full Load: ${Math.round(metrics.fullLoad)}ms`;
+                }
+            });
+
+            // Expose functions globally
+            window.showSection = showSection;
+            window.proceedToSelection = proceedToSelection;
+            window.sendToWhatsApp = sendToWhatsApp;
+        }
+
+        // Run init after DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html>
