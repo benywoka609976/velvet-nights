@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Nights - Surrender to Forbidden Pleasures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <style>
+        :root {
+            --primary-color: #ff1493;
+            --secondary-color: #ffd700;
+            --dark-bg: #2c0a1a;
+            --medium-bg: #4a0b2c;
+            --light-bg: rgba(255,255,255,0.1);
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--medium-bg) 50%, #1a0a2c 100%);
+            color: var(--secondary-color);
+            font-family: 'Crimson Text', serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x400/8B0000/FFD700?text=Velvet+Nights') center/cover;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(139,0,0,0.3) 0%, transparent 70%);
+        }
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            position: relative;
+            z-index: 1;
+        }
+        header p {
+            font-size: 1.2em;
+            font-style: italic;
+            color: var(--secondary-color);
+            position: relative;
+            z-index: 1;
+        }
+        nav {
+            background: rgba(74, 11, 44, 0.9);
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        nav button {
+            background: linear-gradient(45deg, #8b0000, var(--primary-color));
+            color: var(--secondary-color);
+            border: none;
+            padding: 12px 24px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 25px;
+            font-family: inherit;
+            font-size: 1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        nav button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(255,20,147,0.5);
+        }
+        section {
+            display: none;
+            padding: 40px 20px;
+            min-height: 80vh;
+        }
+        section.active {
+            display: block;
+        }
+        .erotic-section {
+            background: var(--light-bg);
+            color: var(--secondary-color);
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,20,147,0.3);
+            box-shadow: inset 0 0 20px rgba(255,20,147,0.1);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        .girl-slot, .airbnb-slot {
+            position: relative;
+            height: 280px;
+            background: linear-gradient(45deg, var(--medium-bg), var(--dark-bg));
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid rgba(255,20,147,0.5);
+        }
+        .girl-slot:hover, .airbnb-slot:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(255,20,147,0.4);
+        }
+        .girl-slot video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .girl-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            filter: sepia(0.3) hue-rotate(300deg);
+        }
+        .swipe-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px var(--secondary-color);
+            transition: opacity 0.3s;
+            z-index: 2;
+        }
+        .swipe-overlay.hidden {
+            opacity: 0;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.4);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        input, button, textarea, select {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 1px solid var(--primary-color);
+            background: rgba(255,20,147,0.1);
+            color: var(--secondary-color);
+            font-family: inherit;
+            font-size: 1em;
+        }
+        button {
+            background: linear-gradient(45deg, var(--primary-color), #8b0000);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .checkbox-item {
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .checkbox-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        .horizontal-scroll img {
+            width: 350px;
+            height: 220px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .about-text {
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.1em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .drinks-note {
+            background: linear-gradient(45deg, rgba(255,165,0,0.2), rgba(255,69,0,0.2));
+            color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,165,0,0.5);
+        }
+        /* Lazy load placeholders for better initial render */
+        .lazy-img, .lazy-small {
+            position: relative;
+            background: linear-gradient(45deg, var(--medium-bg), var(--dark-bg));
+        }
+        .lazy-img::after, .lazy-small::after {
+            content: 'S' attr(data-siren);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff69b4;
+            font-weight: bold;
+            z-index: 1;
+        }
+        .lazy-img::after {
+            font-size: 2em;
+        }
+        .lazy-small::after {
+            font-size: 1.5em;
+        }
+        #metrics {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background: rgba(0,0,0,0.8);
+            color: var(--secondary-color);
+            padding: 10px;
+            font-size: 0.8em;
+            font-family: monospace;
+            border-top-left-radius: 10px;
+            max-width: 300px;
+            z-index: 1000;
+        }
+        
+        /* New Styles for Enhanced Features */
+        .checkout-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, var(--primary-color), #8b0000);
+            color: var(--secondary-color);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 3;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+        .checkout-btn:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 4px 10px rgba(255,20,147,0.5);
+        }
+        
+        .ticket-counter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.4);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .counter-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .counter-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        
+        .counter-value {
+            font-size: 2em;
+            font-weight: bold;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        .referral-system {
+            background: rgba(0,0,0,0.4);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .referral-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+        
+        .referral-progress {
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), #8b0000);
+            width: 0%;
+            transition: width 0.5s;
+        }
+        
+        .event-template {
+            background: rgba(0,0,0,0.4);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .template-preview {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            min-height: 200px;
+        }
+        
+        .girl-profile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 10000;
+            overflow-y: auto;
+        }
+        
+        .profile-content {
+            max-width: 800px;
+            margin: 50px auto;
+            background: var(--dark-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255,20,147,0.3);
+        }
+        
+        .profile-header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .profile-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-info {
+            padding: 30px;
+        }
+        
+        .close-profile {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: var(--secondary-color);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 10001;
+        }
+        
+        .airbnb-details {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 10000;
+            overflow-y: auto;
+        }
+        
+        .details-content {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: var(--dark-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255,20,147,0.3);
+        }
+        
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        
+        .amenity-item {
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .amenity-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .customization-panel {
+            background: rgba(0,0,0,0.4);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .color-picker {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .color-option.active {
+            border-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Velvet Nights</h1>
+        <p>Where silken shadows caress bare skin, and every whisper ignites a fire of untamed desire. Surrender to the night's most intoxicating embrace.</p>
+    </header>
+    <nav>
+        <button onclick="showSection('ladies-room')">Ladies Room</button>
+        <button onclick="showSection('party-organizer')">Party Organizer</button>
+        <button onclick="showSection('airbnb')">Airbnb</button>
+        <button onclick="showSection('about')">About</button>
+    </nav>
+
+    <section id="ladies-room" class="active">
+        <div class="erotic-section">
+            <h2 style="color: #ff1493; text-align: center;">Ladies Room: Sirens of Sinful Allure</h2>
+            <p style="text-align: center; font-style: italic;">Gaze upon our velvet-veiled vixens, their forms a tapestry of temptation. Click to unveil their secrets and claim your desire.</p>
+            
+            <div class="customization-panel">
+                <h3 style="color: #ff1493;">Customize Your View</h3>
+                <p>Choose your preferred theme:</p>
+                <div class="color-picker">
+                    <div class="color-option active" style="background: #ff1493;" onclick="changeTheme('original')"></div>
+                    <div class="color-option" style="background: #9b30ff;" onclick="changeTheme('purple')"></div>
+                    <div class="color-option" style="background: #00ced1;" onclick="changeTheme('teal')"></div>
+                    <div class="color-option" style="background: #ff4500;" onclick="changeTheme('orange')"></div>
+                </div>
+            </div>
+            
+            <div class="grid" id="girls-grid">
+                <!-- Girls slots generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="party-organizer">
+        <div class="erotic-section">
+            <h2 style="color: #ff1493; text-align: center;">Party Organizer: Orgy of Ecstatic Revelry</h2>
+            <p style="text-align: center; font-style: italic;">Curate your carnal gathering, where bodies entwine in euphoric abandon. Register your lustful intentions and summon your chosen muses.</p>
+            
+            <div class="drinks-note">
+                <strong>Drinks Delivery:</strong> Our enigmatic host can deliver elixirs of inebriation to your lair of lust. We dare not vend spirits through the ether, for Kenyan edicts forbid it—deliveries alone shall quench your thirst.
+            </div>
+            
+            <button onclick="openWhatsApp()" style="margin: 20px 0; display: block; width: auto; margin-left: auto; margin-right: auto;">Contact Party Organizer on WhatsApp</button>
+            
+            <div class="event-template">
+                <h3 style="color: #ff1493;">Event Marketing Template</h3>
+                <form id="event-form">
+                    <input type="text" id="event-title" placeholder="Event Title" required>
+                    <input type="date" id="event-date" required>
+                    <input type="text" id="event-location" placeholder="Location" required>
+                    <textarea id="event-description" placeholder="Event Description" rows="4" required></textarea>
+                    <input type="number" id="event-ticket-price" placeholder="Ticket Price" required>
+                    <button type="button" onclick="generateTemplate()">Generate Marketing Template</button>
+                </form>
+                
+                <div class="template-preview" id="template-preview">
+                    <p>Your event template will appear here...</p>
+                </div>
+                
+                <button onclick="sendTemplateToWhatsApp()" style="display: block; width: 100%;">Send Template to WhatsApp</button>
+            </div>
+            
+            <div class="ticket-counter">
+                <div>
+                    <h3 style="color: #ff1493; margin: 0;">Tickets Sold</h3>
+                    <p style="margin: 5px 0; font-style: italic;">Keep track of your sales</p>
+                </div>
+                <div class="counter-controls">
+                    <button class="counter-btn" onclick="updateTicketCount(-1)">-</button>
+                    <div class="counter-value" id="ticket-count">0</div>
+                    <button class="counter-btn" onclick="updateTicketCount(1)">+</button>
+                    <input type="number" id="ticket-input" placeholder="Set count" style="width: 100px; margin: 0 10px;">
+                    <button onclick="setTicketCount()">Set</button>
+                </div>
+            </div>
+            
+            <div class="referral-system">
+                <h3 style="color: #ff1493;">Referral Program</h3>
+                <p>Earn a free ticket for every 5 referrals!</p>
+                
+                <div id="referral-list">
+                    <!-- Referral items will be added here -->
+                </div>
+                
+                <form id="referral-form">
+                    <input type="text" id="referrer-name" placeholder="Referrer Name" required>
+                    <input type="number" id="referral-count" placeholder="Number of Tickets Sold" min="1" required>
+                    <button type="button" onclick="addReferral()">Add Referral</button>
+                </form>
+                
+                <div id="free-tickets" style="margin-top: 20px;">
+                    <h4>Free Tickets Earned: <span id="free-ticket-count">0</span></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="airbnb">
+        <div class="erotic-section">
+            <h2 style="color: #ff1493; text-align: center;">Airbnb: Sanctuaries of Sensual Surrender</h2>
+            <p style="text-align: center; font-style: italic;">Lairs where lovers lose themselves in languid explorations of the forbidden. Tap to traverse tantalizing visions of velvet-draped vice.</p>
+            <div class="grid" id="airbnb-grid">
+                <!-- Airbnb slots generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="erotic-section">
+            <h2 style="color: #ff1493; text-align: center;">About Velvet Nights: Ode to Carnal Canvas</h2>
+            <div class="about-text">
+                <p>In the throbbing heart of midnight's embrace, where moonlit tendrils trace the arch of a lover's spine, Velvet Nights unfurls like a lover's sigh—soft, insistent, devouring. Here, in this realm of raw reverie, bodies become brushstrokes on a canvas of crimson silk, each curve a confession, each gasp a sonnet of surrender.</p>
+                <p>Our dominion is woven from the threads of taboo delight: clandestine couplings that quicken the pulse to fevered frenzy, bacchanalian bashes where sweat-slicked skin slides in symphonic sin, and boudoirs of borrowed bliss, alcoves alive with the echo of ecstatic cries. Exotic enchantresses, their hips a hypnotic sway of shadowed promise, await your summons—their lips a portal to paradises profane, their touch a tango of torment and triumph.</p>
+                <p>We are the architects of appetite, sculpting nights where inhibition dissolves like dew on dawn-kissed flesh. Artistic in our alchemy of arousal, we transmute mere mortals into maestros of the moan. Dare to descend into our depths; let the velvet vise your virtues, and emerge reborn in rapture's relentless glow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Girl Profile Modal -->
+    <div id="girl-profile" class="girl-profile">
+        <button class="close-profile" onclick="closeProfile()">&times;</button>
+        <div class="profile-content">
+            <div class="profile-header">
+                <img id="profile-main-img" src="" alt="Siren">
+            </div>
+            <div class="profile-info">
+                <h2 id="profile-name" style="color: #ff1493;">Siren Name</h2>
+                <p id="profile-description">Description will appear here...</p>
+                <div class="horizontal-scroll" id="profile-gallery">
+                    <!-- Additional images will be added here -->
+                </div>
+                <button onclick="contactAboutGirl()" style="margin-top: 20px;">Contact About This Siren</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Airbnb Details Modal -->
+    <div id="airbnb-details" class="airbnb-details">
+        <button class="close-profile" onclick="closeAirbnbDetails()">&times;</button>
+        <div class="details-content">
+            <div class="profile-header">
+                <img id="airbnb-main-img" src="" alt="Airbnb">
+            </div>
+            <div class="profile-info">
+                <h2 id="airbnb-name" style="color: #ff1493;">Airbnb Name</h2>
+                <p id="airbnb-description">Description will appear here...</p>
+                <h3 style="color: #ff1493;">Amenities</h3>
+                <div class="amenities-grid" id="amenities-grid">
+                    <!-- Amenity items will be added here -->
+                </div>
+                <button onclick="contactAboutAirbnb()" style="margin-top: 20px;">Contact About This Property</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="metrics"></div>
+
+    <script>
+        // Defer non-critical script execution
+        function init() {
+            function showSection(sectionId) {
+                document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+                document.getElementById(sectionId).classList.add('active');
+            }
+
+            // Performance metrics setup
+            const metrics = {
+                initStart: performance.now(),
+                domLoad: 0,
+                fullLoad: 0,
+                girlsGen: 0,
+                partyGen: 0,
+                airbnbGen: 0
+            };
+
+            // Generate 75 girl slots with Intersection Observer lazy loading
+            const girlsStart = performance.now();
+            const girlsGrid = document.getElementById('girls-grid');
+            for (let i = 1; i <= 75; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'girl-slot';
+                slot.dataset.sirenId = i;
+                const emptyPlaceholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjI4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNGEwYjJjIi8+PC9zdmc+';
+                slot.innerHTML = `
+                    <img class="lazy-img" data-siren="${i}" data-src="images/siren${i}.PNG" alt="Siren of Desire ${i}" src="${emptyPlaceholder}">
+                    <div class="swipe-overlay">Click for Details</div>
+                    <button class="checkout-btn" data-girl-id="${i}">Check Out</button>
+                `;
+                
+                // Click to open girl profile
+                slot.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('checkout-btn')) {
+                        openGirlProfile(this.dataset.sirenId);
+                    }
+                });
+                
+                // Checkout button
+                const checkoutBtn = slot.querySelector('.checkout-btn');
+                checkoutBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const girlId = this.dataset.girlId;
+                    const message = `I'm interested in Siren ${girlId} from Velvet Nights. Please provide more details.`;
+                    const whatsappUrl = `https://wa.me/254714227080?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+                
+                girlsGrid.appendChild(slot);
+            }
+            metrics.girlsGen = performance.now() - girlsStart;
+
+            // Set up Intersection Observer for lazy loading images with optimized thresholds
+            function createPlaceholder(width, height, text) {
+                const svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#4a0b2c"/><text x="50%" y="50%" font-family="Arial" font-size="${Math.min(width, height) / 10}" fill="#ff69b4" text-anchor="middle" dy=".3em">${text}</text></svg>`;
+                return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
+            }
+
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const isLarge = img.classList.contains('lazy-img');
+                        const width = isLarge ? 220 : 80;
+                        const height = isLarge ? 280 : 80;
+                        const sirenNum = img.dataset.siren;
+                        const placeholderUrl = createPlaceholder(width, height, `S${sirenNum}`);
+                        const realSrc = img.dataset.src;
+
+                        img.src = realSrc;
+                        img.onerror = () => {
+                            img.src = placeholderUrl;
+                        };
+                        img.onload = () => {
+                            delete img.dataset.src;
+                            img.classList.remove('lazy-img', 'lazy-small');
+                            img.onerror = null;
+                        };
+
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, { 
+                rootMargin: '100px 0px',
+                threshold: [0.01, 0.5, 1.0]
+            });
+
+            // Observe all lazy images
+            document.querySelectorAll('.girl-slot img, .checkbox-item img').forEach(img => {
+                imageObserver.observe(img);
+            });
+
+            // Generate 50 Airbnb slots
+            const airbnbStart = performance.now();
+            const airbnbGrid = document.getElementById('airbnb-grid');
+            for (let i = 1; i <= 50; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'airbnb-slot';
+                slot.dataset.propertyId = i;
+                slot.innerHTML = `<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjI4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjOGIwMDAwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmNjliNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxhaXIgJHtpfTwvdGV4dD48L3N2Zz4=" alt="Den of Delight ${i}">`;
+                slot.onclick = function() {
+                    openAirbnbDetails(this.dataset.propertyId);
+                };
+                airbnbGrid.appendChild(slot);
+            }
+            metrics.airbnbGen = performance.now() - airbnbStart;
+            metrics.initEnd = performance.now();
+
+            // Update metrics display
+            const metricsDiv = document.getElementById('metrics');
+            metricsDiv.innerHTML = `
+                Init: ${Math.round(metrics.initEnd - metrics.initStart)}ms<br>
+                Girls Gen: ${Math.round(metrics.girlsGen)}ms<br>
+                Party Gen: ${Math.round(metrics.partyGen)}ms<br>
+                Airbnb Gen: ${Math.round(metrics.airbnbGen)}ms
+            `;
+
+            // Load event metrics
+            window.addEventListener('load', () => {
+                if (performance.getEntriesByType('navigation').length > 0) {
+                    const perf = performance.getEntriesByType('navigation')[0];
+                    metrics.domLoad = perf.domContentLoadedEventEnd - perf.fetchStart;
+                    metrics.fullLoad = perf.loadEventEnd - perf.fetchStart;
+                    metricsDiv.innerHTML += `<br>DOM Load: ${Math.round(metrics.domLoad)}ms<br>Full Load: ${Math.round(metrics.fullLoad)}ms`;
+                }
+            });
+
+            // Load ticket count from localStorage
+            const savedTicketCount = localStorage.getItem('velvetNightsTicketCount');
+            if (savedTicketCount) {
+                document.getElementById('ticket-count').textContent = savedTicketCount;
+            }
+            
+            // Load referrals from localStorage
+            const savedReferrals = localStorage.getItem('velvetNightsReferrals');
+            if (savedReferrals) {
+                referrals = JSON.parse(savedReferrals);
+                updateReferralList();
+                updateFreeTickets();
+            }
+
+            // Expose functions globally
+            window.showSection = showSection;
+            window.openWhatsApp = openWhatsApp;
+            window.generateTemplate = generateTemplate;
+            window.sendTemplateToWhatsApp = sendTemplateToWhatsApp;
+            window.updateTicketCount = updateTicketCount;
+            window.setTicketCount = setTicketCount;
+            window.addReferral = addReferral;
+            window.openGirlProfile = openGirlProfile;
+            window.closeProfile = closeProfile;
+            window.contactAboutGirl = contactAboutGirl;
+            window.openAirbnbDetails = openAirbnbDetails;
+            window.closeAirbnbDetails = closeAirbnbDetails;
+            window.contactAboutAirbnb = contactAboutAirbnb;
+            window.changeTheme = changeTheme;
+        }
+
+        // Party Organizer Functions
+        function openWhatsApp() {
+            const message = "Hello, I'm interested in organizing a party with Velvet Nights. Please provide more information.";
+            const whatsappUrl = `https://wa.me/254714227080?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        function generateTemplate() {
+            const title = document.getElementById('event-title').value;
+            const date = document.getElementById('event-date').value;
+            const location = document.getElementById('event-location').value;
+            const description = document.getElementById('event-description').value;
+            const price = document.getElementById('event-ticket-price').value;
+            
+            if (!title || !date || !location || !description || !price) {
+                alert('Please fill in all fields to generate the template.');
+                return;
+            }
+            
+            const template = `
+                <h3 style="color: #ff1493;">${title}</h3>
+                <p><strong>Date:</strong> ${new Date(date).toLocaleDateString()}</p>
+                <p><strong>Location:</strong> ${location}</p>
+                <p><strong>Description:</strong> ${description}</p>
+                <p><strong>Ticket Price:</strong> KES ${price}</p>
+                <p style="font-style: italic;">Join us for an unforgettable night of pleasure and excitement. Limited tickets available!</p>
+                <button onclick="sendTemplateToWhatsApp()" style="background: linear-gradient(45deg, #ff1493, #8b0000); color: #ffd700; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">Get Your Tickets Now</button>
+            `;
+            
+            document.getElementById('template-preview').innerHTML = template;
+        }
+        
+        function sendTemplateToWhatsApp() {
+            const templateContent = document.getElementById('template-preview').innerHTML;
+            if (templateContent.includes('Your event template will appear here')) {
+                alert('Please generate a template first.');
+                return;
+            }
+            
+            // Create a temporary element to extract text content
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = templateContent;
+            const textContent = tempDiv.textContent || tempDiv.innerText || '';
+            
+            const message = `Check out this event: ${textContent}`;
+            const whatsappUrl = `https://wa.me/254714227080?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Ticket Counter Functions
+        let ticketCount = parseInt(document.getElementById('ticket-count').textContent) || 0;
+        
+        function updateTicketCount(change) {
+            ticketCount += change;
+            if (ticketCount < 0) ticketCount = 0;
+            document.getElementById('ticket-count').textContent = ticketCount;
+            localStorage.setItem('velvetNightsTicketCount', ticketCount.toString());
+        }
+        
+        function setTicketCount() {
+            const inputValue = parseInt(document.getElementById('ticket-input').value);
+            if (!isNaN(inputValue) && inputValue >= 0) {
+                ticketCount = inputValue;
+                document.getElementById('ticket-count').textContent = ticketCount;
+                localStorage.setItem('velvetNightsTicketCount', ticketCount.toString());
+                document.getElementById('ticket-input').value = '';
+            }
+        }
+        
+        // Referral System
+        let referrals = [];
+        
+        function addReferral() {
+            const name = document.getElementById('referrer-name').value;
+            const count = parseInt(document.getElementById('referral-count').value);
+            
+            if (!name || isNaN(count) || count <= 0) {
+                alert('Please enter valid referral information.');
+                return;
+            }
+            
+            referrals.push({ name, count, progress: 0 });
+            document.getElementById('referrer-name').value = '';
+            document.getElementById('referral-count').value = '';
+            
+            updateReferralList();
+            updateFreeTickets();
+            saveReferrals();
+        }
+        
+        function updateReferralList() {
+            const referralList = document.getElementById('referral-list');
+            referralList.innerHTML = '';
+            
+            referrals.forEach((referral, index) => {
+                const progress = (referral.count % 5) / 5 * 100;
+                const freeTickets = Math.floor(referral.count / 5);
+                
+                const item = document.createElement('div');
+                item.className = 'referral-item';
+                item.innerHTML = `
+                    <div>
+                        <strong>${referral.name}</strong>
+                        <p>Tickets Sold: ${referral.count}</p>
+                        <div class="referral-progress">
+                            <div class="progress-bar" style="width: ${progress}%"></div>
+                        </div>
+                        <p>Free Tickets Earned: ${freeTickets}</p>
+                    </div>
+                    <button onclick="removeReferral(${index})" style="background: transparent; border: 1px solid #ff1493; color: #ff1493; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Remove</button>
+                `;
+                referralList.appendChild(item);
+            });
+        }
+        
+        function removeReferral(index) {
+            referrals.splice(index, 1);
+            updateReferralList();
+            updateFreeTickets();
+            saveReferrals();
+        }
+        
+        function updateFreeTickets() {
+            let totalFreeTickets = 0;
+            referrals.forEach(referral => {
+                totalFreeTickets += Math.floor(referral.count / 5);
+            });
+            document.getElementById('free-ticket-count').textContent = totalFreeTickets;
+        }
+        
+        function saveReferrals() {
+            localStorage.setItem('velvetNightsReferrals', JSON.stringify(referrals));
+        }
+        
+        // Girl Profile Functions
+        function openGirlProfile(girlId) {
+            // In a real implementation, you would fetch girl data from a server
+            // For this demo, we'll use placeholder data
+            const girlData = {
+                name: `Siren ${girlId}`,
+                description: `A temptress of unparalleled beauty and skill. Siren ${girlId} specializes in the art of sensual pleasure, with a particular talent for [redacted]. Her touch is like silk, her gaze like fire. Experience her and you'll never be the same.`,
+                mainImage: `images/siren${girlId}.PNG`,
+                gallery: [
+                    `images/siren${girlId}_1.PNG`,
+                    `images/siren${girlId}_2.PNG`,
+                    `images/siren${girlId}_3.PNG`
+                ]
+            };
+            
+            document.getElementById('profile-name').textContent = girlData.name;
+            document.getElementById('profile-description').textContent = girlData.description;
+            document.getElementById('profile-main-img').src = girlData.mainImage;
+            
+            const gallery = document.getElementById('profile-gallery');
+            gallery.innerHTML = '';
+            girlData.gallery.forEach(imgSrc => {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = `${girlData.name} Gallery`;
+                gallery.appendChild(img);
+            });
+            
+            document.getElementById('girl-profile').style.display = 'block';
+        }
+        
+        function closeProfile() {
+            document.getElementById('girl-profile').style.display = 'none';
+        }
+        
+        function contactAboutGirl() {
+            const girlName = document.getElementById('profile-name').textContent;
+            const message = `I'm interested in ${girlName} from Velvet Nights. Please provide more details and availability.`;
+            const whatsappUrl = `https://wa.me/254714227080?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Airbnb Details Functions
+        function openAirbnbDetails(propertyId) {
+            // In a real implementation, you would fetch property data from a server
+            // For this demo, we'll use placeholder data
+            const propertyData = {
+                name: `Den of Delight ${propertyId}`,
+                description: `A sanctuary of sensual surrender, where every room whispers promises of pleasure. This property features a master suite with a circular bed, a jacuzzi for two, and a fully stocked bar. The perfect setting for your intimate gatherings.`,
+                mainImage: `https://via.placeholder.com/800x400/4a0b2c/ffd700?text=Den+of+Delight+${propertyId}`,
+                amenities: [
+                    { name: 'Master Suite', image: 'https://via.placeholder.com/200x150/4a0b2c/ffd700?text=Bedroom' },
+                    { name: 'Jacuzzi', image: 'https://via.placeholder.com/200x150/4a0b2c/ffd700?text=Jacuzzi' },
+                    { name: 'Bar', image: 'https://via.placeholder.com/200x150/4a0b2c/ffd700?text=Bar' },
+                    { name: 'Pool', image: 'https://via.placeholder.com/200x150/4a0b2c/ffd700?text=Pool' },
+                    { name: 'Kitchen', image: 'https://via.placeholder.com/200x150/4a0b2c/ffd700?text=Kitchen' },
+                    { name: 'Living Area', image: 'https://via.placeholder.com/200x150/4a0b2c/ffd700?text=Living+Area' }
+                ]
+            };
+            
+            document.getElementById('airbnb-name').textContent = propertyData.name;
+            document.getElementById('airbnb-description').textContent = propertyData.description;
+            document.getElementById('airbnb-main-img').src = propertyData.mainImage;
+            
+            const amenitiesGrid = document.getElementById('amenities-grid');
+            amenitiesGrid.innerHTML = '';
+            propertyData.amenities.forEach(amenity => {
+                const item = document.createElement('div');
+                item.className = 'amenity-item';
+                item.innerHTML = `
+                    <img src="${amenity.image}" alt="${amenity.name}">
+                    <p>${amenity.name}</p>
+                `;
+                amenitiesGrid.appendChild(item);
+            });
+            
+            document.getElementById('airbnb-details').style.display = 'block';
+        }
+        
+        function closeAirbnbDetails() {
+            document.getElementById('airbnb-details').style.display = 'none';
+        }
+        
+        function contactAboutAirbnb() {
+            const propertyName = document.getElementById('airbnb-name').textContent;
+            const message = `I'm interested in ${propertyName} from Velvet Nights. Please provide more details, availability, and pricing.`;
+            const whatsappUrl = `https://wa.me/254714227080?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Theme Customization
+        function changeTheme(theme) {
+            const root = document.documentElement;
+            const colorOptions = document.querySelectorAll('.color-option');
+            
+            colorOptions.forEach(option => option.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            switch(theme) {
+                case 'original':
+                    root.style.setProperty('--primary-color', '#ff1493');
+                    root.style.setProperty('--secondary-color', '#ffd700');
+                    root.style.setProperty('--dark-bg', '#2c0a1a');
+                    root.style.setProperty('--medium-bg', '#4a0b2c');
+                    break;
+                case 'purple':
+                    root.style.setProperty('--primary-color', '#9b30ff');
+                    root.style.setProperty('--secondary-color', '#dda0dd');
+                    root.style.setProperty('--dark-bg', '#1a0a2c');
+                    root.style.setProperty('--medium-bg', '#4b0082');
+                    break;
+                case 'teal':
+                    root.style.setProperty('--primary-color', '#00ced1');
+                    root.style.setProperty('--secondary-color', '#afeeee');
+                    root.style.setProperty('--dark-bg', '#0a2c2c');
+                    root.style.setProperty('--medium-bg', '#008b8b');
+                    break;
+                case 'orange':
+                    root.style.setProperty('--primary-color', '#ff4500');
+                    root.style.setProperty('--secondary-color', '#ffd700');
+                    root.style.setProperty('--dark-bg', '#2c1a0a');
+                    root.style.setProperty('--medium-bg', '#8b4500');
+                    break;
+            }
+        }
+
+        // Run init after DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html>
